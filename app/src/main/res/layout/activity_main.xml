@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+
+    android:background="@drawable/img"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="КРОКОДИЛ"
+            android:textColor="#FFF7F7"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/contex"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center|end"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/buttonMusic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="120dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/music"
+            android:contentDescription="@string/description"/>
+
+        <ImageButton
+            android:id="@+id/buttonSetting"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="130dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/setting"
+            android:contentDescription="@string/description"/>
+
+        <ImageButton
+            android:id="@+id/buttonPlay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/play"
+            android:contentDescription="@string/description"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavigationView"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/category">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
