@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Crocodile</string>
     <string name="description"> YOUR_DESCRIPTION_HERE </string>
+    <string name="title"> Категории </string>
+    <string name="movie"> Фильмы </string>
+    <string name="work"> Работа </string>
+    <string name="item"> Предмет </string>
+    <string name="cartoon"> Мультфильмы </string>
+    <string name="text"> КРОКОДИЛ </string>
+    <string name="menu"> MENU </string>
+
 </resources>

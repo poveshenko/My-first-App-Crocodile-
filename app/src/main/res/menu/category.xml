@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn = "navigation_view">
 
-<item android:title="Категории" >
+<item android:title="@string/title" >
 <menu>
-<item android:id="@+id/movie" android:title="Фильмы" android:icon="@drawable/movie" />
-<item android:id="@+id/carton" android:title="Мультфильмы" android:icon="@drawable/mult"/>
-<item android:id="@+id/items" android:title="Предметы" android:icon="@drawable/item"/>
-<item android:id="@+id/work" android:title="Работа" android:icon="@drawable/work"/>
+<item android:id="@+id/movie" android:title="@string/movie" android:icon="@drawable/movie" />
+<item android:id="@+id/carton" android:title="@string/cartoon" android:icon="@drawable/cartoon"/>
+<item android:id="@+id/items" android:title="@string/item" android:icon="@drawable/item"/>
+<item android:id="@+id/work" android:title="@string/work" android:icon="@drawable/work"/>
 </menu>
 </item>
 </menu>

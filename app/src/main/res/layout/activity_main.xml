@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="КРОКОДИЛ"
+            android:text="@string/text"
             android:textColor="#FFF7F7"
             android:textSize="24sp"
             android:textStyle="bold" />
