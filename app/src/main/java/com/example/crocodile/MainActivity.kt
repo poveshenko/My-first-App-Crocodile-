@@ -20,17 +20,16 @@ class MainActivity : AppCompatActivity() {
 
         binding.apply {
 
-buttonMusic.setOnClickListener {
+            buttonMusic.setOnClickListener {
 
-    if(mediaPlayer2.isPlaying)
+                if (mediaPlayer2.isPlaying)
 
-        mediaPlayer2.pause();
+                    mediaPlayer2.pause();
+                else
 
-    else
+                    mediaPlayer2.start();
 
-        mediaPlayer2.start();
-
-}
+            }
 
             buttonSetting.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
@@ -44,9 +43,8 @@ buttonMusic.setOnClickListener {
                             textPlay.text = getMovie()
                             mediaPlayer.start()
 
-
                         }
-                        drawer.openDrawer(GravityCompat.START)
+                       
                     }
 
                     R.id.carton -> {
@@ -66,14 +64,14 @@ buttonMusic.setOnClickListener {
                             textPlay.text = getItems()
                         }
                     }
-                }
 
+                }
+                drawer.closeDrawer(GravityCompat.START)
                 true
             }
-
-
         }
     }
+
     private fun getItems(): String {
         return resources.getStringArray(R.array.item)[randomNumberItem()]
     }
@@ -103,7 +101,7 @@ buttonMusic.setOnClickListener {
     }
 
     private fun getWork(): String {
-        return resources.getStringArray(R.array.work)[randomNumberMovie()]
+        return resources.getStringArray(R.array.work)[randomNumberWork()]
     }
 
     private fun randomNumberWork(): Int {
@@ -112,10 +110,7 @@ buttonMusic.setOnClickListener {
     }
 
 
-    private fun page() {
-        val nextPage = Intent(this, ActivityGame::class.java)
-        startActivity(nextPage)
-    }
+
 
 
 }
