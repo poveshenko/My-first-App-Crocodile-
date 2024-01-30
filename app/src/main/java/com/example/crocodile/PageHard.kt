@@ -5,15 +5,13 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
-import com.example.crocodile.databinding.ActivityMainBinding
+import com.example.crocodile.databinding.ActivityPageHardBinding
 
-class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
-
+class PageHard : AppCompatActivity() {
+    lateinit var binding: ActivityPageHardBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPageHardBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
@@ -33,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 mediaPlayer.start()
             }
 
-// Подключение кнопки для включение и выключения музыки
+            //// Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
 
                 if (mediaPlayer2.isPlaying)
@@ -43,52 +41,48 @@ class MainActivity : AppCompatActivity() {
 
                     mediaPlayer2.start();
             }
-
-//Подключение кнопки - "настройки"
+            //Подключение кнопки - "настройки"
             buttonSetting.setOnClickListener {
                 drawer.openDrawer(GravityCompat.START)
-
             }
-
-
-//Подключение меню навигации(Боковое меню)
+            //Average
 
             NavigationView.setNavigationItemSelectedListener {
-
+//Выбор Сложности
                 when (it.itemId) {
+                    R.id.easy -> {
+                        val intent = Intent(this@PageHard, MainActivity::class.java)
+                        startActivity(intent)
+                    }
                     R.id.average -> {
-                        val intent = Intent(this@MainActivity, PageAverage::class.java)
+                        val intent = Intent(this@PageHard, PageAverage::class.java)
                         startActivity(intent)
                     }
-                    R.id.hard -> {
-                        val intent = Intent(this@MainActivity, PageHard::class.java)
-                        startActivity(intent)
-                    }
-
+//
                     R.id.movie -> {
                         buttonPlay.setOnClickListener {
-                            textPlay.text = getMovie()
+                            textPlay.text = getMovieHard()
                             mediaPlayer.start()
                         }
                     }
 
                     R.id.carton -> {
                         buttonPlay.setOnClickListener {
-                            textPlay.text = getCartoon()
+                            textPlay.text = getCartoonHard()
                             mediaPlayer.start()
                         }
                     }
 
                     R.id.work -> {
                         buttonPlay.setOnClickListener {
-                            textPlay.text = getWork()
+                            textPlay.text = getWorkHard()
                             mediaPlayer.start()
                         }
                     }
 
                     R.id.items -> {
                         buttonPlay.setOnClickListener {
-                            textPlay.text = getItems()
+                            textPlay.text = getItemsHard()
                             mediaPlayer.start()
                         }
                     }
@@ -97,62 +91,63 @@ class MainActivity : AppCompatActivity() {
                 drawer.closeDrawer(GravityCompat.START)
                 true
             }
-
-
         }
-
     }
 
 
-    //Основные функции, бокового меню
-
-    private fun getItems(): String {
-        return resources.getStringArray(R.array.item)[randomNumberItem()]
-    }
-
-    private fun randomNumberItem(): Int {
-        val size = resources.getStringArray(R.array.item).size - 1
-        return (0..size).random()
-    }
-
-
-    private fun getCartoon(): String {
-        return resources.getStringArray(R.array.cartoon)[randomNumberCartoon()]
-    }
-
-    private fun randomNumberCartoon(): Int {
-        val size = resources.getStringArray(R.array.cartoon).size - 1
-        return (0..size).random()
-    }
-
-    private fun getMovie(): String {
-        return resources.getStringArray(R.array.movie)[randomNumberMovie()]
-    }
-
-    private fun randomNumberMovie(): Int {
-        val size = resources.getStringArray(R.array.movie).size - 1
-        return (0..size).random()
-    }
-
-    private fun getWork(): String {
-        return resources.getStringArray(R.array.work)[randomNumberWork()]
-    }
-
-    private fun randomNumberWork(): Int {
-        val size = resources.getStringArray(R.array.work).size - 1
-        return (0..size).random()
-    }
+    //
+//
 
     // функция таймер
     private fun playTimer() {
-        object : CountDownTimer(30000, 1000) {
+        object : CountDownTimer(200000, 1000) {
+
+
             override fun onTick(millisUntilFinished: Long) {
                 binding.timer.text = "time: " + millisUntilFinished / 1000
             }
+
             override fun onFinish() {
                 binding.timer.text = ("done!")
             }
         }.start()
+    }
+//    //Средний уровень функции
+
+    private fun getItemsHard(): String {
+        return resources.getStringArray(R.array.itemHard)[randomNumberItemHard()]
+    }
+
+    private fun randomNumberItemHard(): Int {
+        val size = resources.getStringArray(R.array.itemHard).size - 1
+        return (0..size).random()
+    }
+
+    private fun getCartoonHard(): String {
+        return resources.getStringArray(R.array.cartoonHard)[randomNumberCartoonHard()]
+    }
+
+    private fun randomNumberCartoonHard(): Int {
+        val size = resources.getStringArray(R.array.cartoonHard).size - 1
+        return (0..size).random()
+    }
+
+    private fun getMovieHard(): String {
+        return resources.getStringArray(R.array.movieHard)[randomNumberMovieHard()]
+    }
+
+    private fun randomNumberMovieHard(): Int {
+        val size = resources.getStringArray(R.array.movieHard).size - 1
+        return (0..size).random()
+    }
+
+    private fun getWorkHard(): String {
+        return resources.getStringArray(R.array.workHard)[randomNumberWorkHard()]
+    }
+
+    private fun randomNumberWorkHard(): Int {
+        val size = resources.getStringArray(R.array.workHard).size - 1
+        return (0..size).random()
     }
 }
 

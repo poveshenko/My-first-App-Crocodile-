@@ -9,5 +9,9 @@
     <string name="text"> КРОКОДИЛ </string>
     <string name="menu"> MENU </string>
     <string name="number"> two </string>
+    <string name="Легкий"> Легкий </string>
+    <string name="Средний"> Средний </string>
+    <string name="Тяжелый"> Сложный </string>
+    <string name="Сложность"> Сложность </string>
 
 </resources>

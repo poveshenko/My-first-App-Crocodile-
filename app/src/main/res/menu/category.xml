@@ -11,4 +11,12 @@
 <item android:id="@+id/work" android:title="@string/work" android:icon="@drawable/work"/>
 </menu>
 </item>
+    <item android:title="Уровни сложности" >
+        <menu>
+            <item android:id="@+id/easy" android:title="@string/Легкий" android:icon="@drawable/mouse" />
+            <item android:id="@+id/average" android:title="@string/Средний" android:icon="@drawable/cat"/>
+            <item android:id="@+id/hard" android:title="@string/Тяжелый" android:icon="@drawable/dog"/>
+
+        </menu>
+    </item>
 </menu>

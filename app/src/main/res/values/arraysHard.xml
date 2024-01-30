@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movieHard">
+        <item>Бетмен(Тяжелый)</item>
+        <item>Человек-паук(Тяжелый)</item>
+        <item>Брюс-ли(Тяжелый)</item>
+        <item>Терминатор(Тяжелый)</item>
+    </string-array>
+    <string-array name="workHard">
+        <item>Строитель(Тяжелый)</item>
+        <item>Повар(Тяжелый)</item>
+        <item>Кассир(Тяжелый)</item>
+        <item>Охранник(Тяжелый)</item>
+    </string-array>
+    <string-array name="cartoonHard">
+        <item>Винни пух(Тяжелый)</item>
+        <item>Леопольд(Тяжелый)</item>
+        <item>Карлсон(Тяжелый)</item>
+        <item>Волк из «Ну погоди» (Тяжелый)</item>
+    </string-array>
+    <string-array name="itemHard">
+        <item>Нож(Тяжелый)</item>
+        <item>Лыжи(Тяжелый)</item>
+        <item>Турник(Тяжелый)</item>
+        <item>Кружка(Тяжелый)</item>
+    </string-array>
+</resources>

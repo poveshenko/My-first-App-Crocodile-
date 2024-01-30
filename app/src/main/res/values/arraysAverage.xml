@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movieAverage">
+        <item>Бетмен(Средний)</item>
+        <item>Человек-паук(Средний)</item>
+        <item>Брюс-ли(Средний)</item>
+        <item>Терминатор(Средний)</item>
+    </string-array>
+    <string-array name="workAverage">
+        <item>Строитель(Средний)</item>
+        <item>Повар(Средний)</item>
+        <item>Кассир(Средний)</item>
+        <item>Охранник(Средний)</item>
+    </string-array>
+    <string-array name="cartoonAverage">
+        <item>Винни пух(Средний)</item>
+        <item>Леопольд(Средний)</item>
+        <item>Карлсон(Средний)</item>
+        <item>Волк из «Ну погоди» (Средний)</item>
+    </string-array>
+    <string-array name="itemAverage">
+        <item>Нож(Средний)</item>
+        <item>Лыжи(Средний)</item>
+        <item>Турник(Средний)</item>
+        <item>Кружка(Средний)</item>
+    </string-array>
+</resources>
