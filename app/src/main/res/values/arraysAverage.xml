@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="movieAverage">
-        <item>Бетмен(Средний)</item>
-        <item>Человек-паук(Средний)</item>
-        <item>Брюс-ли(Средний)</item>
-        <item>Терминатор(Средний)</item>
+        <item>Охотники за привидениями</item>
+        <item>Леголас</item>
+        <item>Фроддо</item>
+        <item>Матрица</item>
+        <item>Маска</item>
+        <item>Гарри Поттер</item>
+        <item>Звездные войны</item>
     </string-array>
     <string-array name="workAverage">
-        <item>Строитель(Средний)</item>
-        <item>Повар(Средний)</item>
-        <item>Кассир(Средний)</item>
-        <item>Охранник(Средний)</item>
+        <item>Бармен</item>
+        <item>Аниматор</item>
+        <item>Блогер</item>
+        <item>Ветеринар</item>
+        <item>Военный</item>
+        <item>Воспитатель дедСада</item>
+        <item>Учитель</item>
     </string-array>
     <string-array name="cartoonAverage">
-        <item>Винни пух(Средний)</item>
-        <item>Леопольд(Средний)</item>
-        <item>Карлсон(Средний)</item>
-        <item>Волк из «Ну погоди» (Средний)</item>
+        <item>Алладин</item>
+        <item>Дядя Федор(Простаквашино)</item>
+        <item>Бременские музыканты</item>
+        <item>Крокодил Гена</item>
+        <item>Буратино</item>
+        <item>Дед мороз</item>
     </string-array>
     <string-array name="itemAverage">
-        <item>Нож(Средний)</item>
-        <item>Лыжи(Средний)</item>
-        <item>Турник(Средний)</item>
-        <item>Кружка(Средний)</item>
+        <item>Дрель</item>
+        <item>Рулетка</item>
+        <item>Велосипед</item>
+        <item>Погремушка</item>
+        <item>Шкаф</item>
+        <item>Калькулятор</item>
     </string-array>
 </resources>

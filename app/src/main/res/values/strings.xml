@@ -13,5 +13,9 @@
     <string name="Средний"> Средний </string>
     <string name="Тяжелый"> Сложный </string>
     <string name="Сложность"> Сложность </string>
+    <string name="Закрыть"> Закрыть </string>
+    <string name="exit"> Выход </string>
+    <string name="instructions"> Инструкция </string>
+    <string name="PlayGame"> Начать игру </string>
 
 </resources>

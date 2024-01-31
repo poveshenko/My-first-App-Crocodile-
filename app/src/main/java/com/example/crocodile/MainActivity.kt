@@ -11,6 +11,7 @@ import com.example.crocodile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private var isPlaying = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -20,10 +21,16 @@ class MainActivity : AppCompatActivity() {
 
         //Музыкальное сопровождение
         val mediaPlayer = MediaPlayer.create(this, R.raw.click2)
-        val mediaPlayer2 = MediaPlayer.create(this, R.raw.music)
+        val mediaPlayer2 = MediaPlayer.create(this, R.raw.music_sax)
+
 
         //Подключение binding класса
         binding.apply {
+
+            buttonBack.setOnClickListener{
+                val start = Intent(this@MainActivity, MainMenu::class.java)
+                startActivity(start)
+            }
 
 
             //Подключение кнопки таймера
@@ -36,12 +43,16 @@ class MainActivity : AppCompatActivity() {
 // Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
 
-                if (mediaPlayer2.isPlaying)
+                    if (!isPlaying) {
+                        isPlaying = true
+                        buttonMusic.setImageResource(R.drawable.music_on)
+                        mediaPlayer2.start();
 
-                    mediaPlayer2.pause();
-                else
-
-                    mediaPlayer2.start();
+                    } else {
+                        isPlaying = false
+                        buttonMusic.setImageResource(R.drawable.music_off)
+                        mediaPlayer2.pause();
+                    }
             }
 
 //Подключение кнопки - "настройки"

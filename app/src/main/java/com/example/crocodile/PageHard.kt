@@ -10,6 +10,7 @@ import com.example.crocodile.databinding.ActivityPageHardBinding
 
 class PageHard : AppCompatActivity() {
     lateinit var binding: ActivityPageHardBinding
+    private var isPlaying = false
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPageHardBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -34,12 +35,17 @@ class PageHard : AppCompatActivity() {
             //// Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
 
-                if (mediaPlayer2.isPlaying)
+                if (!isPlaying) {
 
-                    mediaPlayer2.pause();
-                else
-
+                    isPlaying = true
+                    buttonMusic.setImageResource(R.drawable.music_on)
                     mediaPlayer2.start();
+                } else {
+
+                    isPlaying = false
+                    buttonMusic.setImageResource(R.drawable.music_off)
+                    mediaPlayer2.pause();
+                }
             }
             //Подключение кнопки - "настройки"
             buttonSetting.setOnClickListener {

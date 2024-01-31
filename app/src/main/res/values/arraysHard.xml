@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="movieHard">
-        <item>Бетмен(Тяжелый)</item>
-        <item>Человек-паук(Тяжелый)</item>
-        <item>Брюс-ли(Тяжелый)</item>
-        <item>Терминатор(Тяжелый)</item>
+        <item>Титаник</item>
+        <item>Кевин Маккаллистер(1 дома)</item>
+        <item>Чарли Чаплин</item>
+        <item>Дьявол</item>
+        <item>Чужой(персонаж)</item>
     </string-array>
     <string-array name="workHard">
-        <item>Строитель(Тяжелый)</item>
-        <item>Повар(Тяжелый)</item>
-        <item>Кассир(Тяжелый)</item>
-        <item>Охранник(Тяжелый)</item>
+        <item>Ученый</item>
+        <item>Агроном</item>
+        <item>Адвокат</item>
+        <item>Авиадиспетчер</item>
+        <item>Киноактер</item>
+        <item>Режисер</item>
     </string-array>
     <string-array name="cartoonHard">
-        <item>Винни пух(Тяжелый)</item>
-        <item>Леопольд(Тяжелый)</item>
-        <item>Карлсон(Тяжелый)</item>
-        <item>Волк из «Ну погоди» (Тяжелый)</item>
+        <item>Арриэль(Русалочка)</item>
+        <item>Моряк Попай</item>
+        <item>Гомер Симпсон</item>
+        <item>Том и Джерри</item>
+        <item>Шрек</item>
+        <item>Король лев</item>
     </string-array>
     <string-array name="itemHard">
-        <item>Нож(Тяжелый)</item>
-        <item>Лыжи(Тяжелый)</item>
-        <item>Турник(Тяжелый)</item>
-        <item>Кружка(Тяжелый)</item>
+        <item>Штукатурка</item>
+        <item>Картина</item>
+        <item>Чайник</item>
+        <item>Колыбель</item>
+        <item>Печка</item>
+        <item>Сундук</item>
+        <item>Самовар</item>
     </string-array>
 </resources>

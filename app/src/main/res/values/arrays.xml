@@ -5,23 +5,31 @@
         <item>Человек-паук</item>
         <item>Брюс-ли</item>
         <item>Терминатор</item>
+        <item>Робокоп</item>
+        <item>Черепашка нинзя</item>
+        <item>Красная шапочка</item>
     </string-array>
     <string-array name="work">
         <item>Строитель</item>
         <item>Повар</item>
         <item>Кассир</item>
         <item>Охранник</item>
+        <item>Водитель</item>
+        <item>Певец</item>
     </string-array>
     <string-array name="cartoon">
         <item>Винни пух</item>
         <item>Леопольд</item>
         <item>Карлсон</item>
         <item>Волк из «Ну погоди» </item>
+        <item>Чебурашка</item>
     </string-array>
     <string-array name="item">
         <item>Нож</item>
         <item>Лыжи</item>
         <item>Турник</item>
+        <item>гвоздь</item>
+        <item>Пистолет</item>
         <item>Кружка</item>
     </string-array>
 </resources>
