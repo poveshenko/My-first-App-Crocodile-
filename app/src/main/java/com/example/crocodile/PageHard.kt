@@ -17,8 +17,8 @@ class PageHard : AppCompatActivity() {
         binding = ActivityPageHardBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        //запрет
-        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
+
 
 
         //Музыкальное сопровождение

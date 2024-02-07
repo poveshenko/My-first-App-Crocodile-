@@ -1,5 +1,6 @@
 package com.example.crocodile
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
@@ -38,17 +39,16 @@ private lateinit var timer: CountDownTimer
             //Подключение кнопки таймера
             buttonStartTimer.setOnClickListener {
 
-
-                playTimerRestart()
+                playTimer()
 
                 mediaPlayer.start()
             }
 
-//            buttonStopTimer.setOnClickListener {
-//                playTimerStop()
-//
-//                mediaPlayer.start()
-//            }
+            buttonStopTimer.setOnClickListener {
+                playTimerStop()
+
+                mediaPlayer.start()
+            }
 
 
 // Подключение кнопки для включение и выключения музыки
@@ -170,6 +170,7 @@ private lateinit var timer: CountDownTimer
     // функция таймер
     private fun playTimer() {
        timer = object : CountDownTimer(30000, 1000) {
+            @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
                 binding.timer.text = "time: " + millisUntilFinished / 1000
             }
@@ -177,20 +178,23 @@ private lateinit var timer: CountDownTimer
                 binding.timer.text = ("done!")
             }
         }.start()
-    }   private fun playTimerRestart() {
-        if(!isPlaying){
-            playTimer()
-            binding.buttonStartTimer.text="СТОП"
-            isPlaying=true
-        }else{
-            timer.cancel()
-            binding.buttonStartTimer.text="РЕСТАРТ"
-            isPlaying=false
-        }
+
+        //функция рестарт/стоп
     }
-//    private fun playTimerStop() {
-//        timer.cancel()
+//    private fun playTimerRestart() {
+//        if(!isPlaying){
+//            playTimer()
+//            binding.buttonStartTimer.text="СТОП"
+//            isPlaying=true
+//        }else{
+//            timer.cancel()
+//            binding.buttonStartTimer.text="РЕСТАРТ"
+//            isPlaying=false
+//        }
 //    }
+    private fun playTimerStop() {
+        timer.cancel()
+    }
 
 
 
