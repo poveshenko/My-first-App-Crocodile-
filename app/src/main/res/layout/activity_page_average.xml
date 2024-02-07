@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
 
-    android:background="@drawable/img"
+    android:background="@drawable/background_green"
     tools:context=".PageAverage">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_marginBottom="180dp"
             android:gravity="center"
             android:text="Средний Уровень"
-            android:textColor="@color/yellow"
+            android:textColor="@color/green2"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -63,8 +63,17 @@
                 android:id="@+id/buttonStartTimer"
                 android:layout_width="123dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/color_change"
+                android:background="@drawable/color_average"
                 android:text="начать"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+            <Button
+                android:id="@+id/buttonStopTimer"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/color_average"
+                android:text="Стоп"
+                android:layout_marginTop="4dp"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
         </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.crocodile
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,10 +12,13 @@ import com.example.crocodile.databinding.ActivityPageHardBinding
 class PageHard : AppCompatActivity() {
     lateinit var binding: ActivityPageHardBinding
     private var isPlaying = false
+    lateinit var timer: CountDownTimer
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPageHardBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        //запрет
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
 
         //Музыкальное сопровождение
@@ -30,6 +34,9 @@ class PageHard : AppCompatActivity() {
                 playTimer()
 
                 mediaPlayer.start()
+            }
+            buttonStopTimer.setOnClickListener {
+                playTimerStop()
             }
 
             //// Подключение кнопки для включение и выключения музыки
@@ -106,7 +113,7 @@ class PageHard : AppCompatActivity() {
 
     // функция таймер
     private fun playTimer() {
-        object : CountDownTimer(200000, 1000) {
+      timer =  object : CountDownTimer(200000, 1000) {
 
 
             override fun onTick(millisUntilFinished: Long) {
@@ -117,6 +124,10 @@ class PageHard : AppCompatActivity() {
                 binding.timer.text = ("done!")
             }
         }.start()
+    }
+
+    private fun playTimerStop() {
+        timer.cancel()
     }
 //    //Средний уровень функции
 

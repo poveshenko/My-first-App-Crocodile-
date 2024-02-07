@@ -13,6 +13,7 @@ import com.example.crocodile.databinding.ActivityPageAverageBinding
 class PageAverage : AppCompatActivity() {
     lateinit var binding: ActivityPageAverageBinding
     private var isPlaying = false
+    lateinit var timer: CountDownTimer
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPageAverageBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
@@ -33,6 +34,9 @@ class PageAverage : AppCompatActivity() {
                 playTimer()
 
                 mediaPlayer.start()
+            }
+            buttonStopTimer.setOnClickListener {
+                playTimerStop()
             }
 
             //// Подключение кнопки для включение и выключения музыки
@@ -109,7 +113,7 @@ class PageAverage : AppCompatActivity() {
 
     // функция таймер
     private fun playTimer() {
-        object : CountDownTimer(100000, 1000) {
+       timer = object : CountDownTimer(100000, 1000) {
 
 
             override fun onTick(millisUntilFinished: Long) {
@@ -121,6 +125,10 @@ class PageAverage : AppCompatActivity() {
             }
         }.start()
     }
+    private fun playTimerStop() {
+     timer.cancel()
+    }
+
 //    //Средний уровень функции
 
     private fun getItemsAverage(): String {

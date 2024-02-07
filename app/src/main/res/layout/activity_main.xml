@@ -76,6 +76,16 @@
                 android:text="начать"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
+            <Button
+                android:id="@+id/buttonStopTimer"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/color_change"
+                android:text="Стоп"
+                android:visibility="invisible"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
         </LinearLayout>
 
     </LinearLayout>

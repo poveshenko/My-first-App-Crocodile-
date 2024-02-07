@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.crocodile.databinding.ActivityMainMenuBinding
+import kotlin.system.exitProcess
 
 
 class MainMenu : AppCompatActivity() {
@@ -47,6 +48,7 @@ class MainMenu : AppCompatActivity() {
             //выходим из игры
             buttonExit.setOnClickListener {
                 finish()
+                exitProcess(0)
 
             }
         }

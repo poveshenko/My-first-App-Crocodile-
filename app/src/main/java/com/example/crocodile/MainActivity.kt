@@ -10,8 +10,10 @@ import androidx.core.view.GravityCompat
 import com.example.crocodile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+private lateinit var timer: CountDownTimer
     lateinit var binding: ActivityMainBinding
     private var isPlaying = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -35,10 +37,19 @@ class MainActivity : AppCompatActivity() {
 
             //Подключение кнопки таймера
             buttonStartTimer.setOnClickListener {
-                playTimer()
+
+
+                playTimerRestart()
 
                 mediaPlayer.start()
             }
+
+//            buttonStopTimer.setOnClickListener {
+//                playTimerStop()
+//
+//                mediaPlayer.start()
+//            }
+
 
 // Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
@@ -115,6 +126,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+
+
     //Основные функции, бокового меню
 
     private fun getItems(): String {
@@ -156,7 +169,7 @@ class MainActivity : AppCompatActivity() {
 
     // функция таймер
     private fun playTimer() {
-        object : CountDownTimer(30000, 1000) {
+       timer = object : CountDownTimer(30000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 binding.timer.text = "time: " + millisUntilFinished / 1000
             }
@@ -164,7 +177,23 @@ class MainActivity : AppCompatActivity() {
                 binding.timer.text = ("done!")
             }
         }.start()
+    }   private fun playTimerRestart() {
+        if(!isPlaying){
+            playTimer()
+            binding.buttonStartTimer.text="СТОП"
+            isPlaying=true
+        }else{
+            timer.cancel()
+            binding.buttonStartTimer.text="РЕСТАРТ"
+            isPlaying=false
+        }
     }
+//    private fun playTimerStop() {
+//        timer.cancel()
+//    }
+
+
+
 }
 
 
