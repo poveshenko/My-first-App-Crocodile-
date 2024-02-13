@@ -22,7 +22,7 @@ class PageAverage : AppCompatActivity() {
 
         //Музыкальное сопровождение
         val mediaPlayer = MediaPlayer.create(this, R.raw.click2)
-        val mediaPlayer2 = MediaPlayer.create(this, R.raw.music)
+        val mediaPlayer2 = MediaPlayer.create(this, R.raw.music_sax)
 
 
         //Подключение binding класса
@@ -31,13 +31,14 @@ class PageAverage : AppCompatActivity() {
 
             //Подключение кнопки таймера
             buttonStartTimer.setOnClickListener {
-                playTimer()
+                playTimerRestart()
 
                 mediaPlayer.start()
+
             }
-            buttonStopTimer.setOnClickListener {
-                playTimerStop()
-            }
+//            buttonStopTimer.setOnClickListener {
+//                playTimerStop()
+//            }
 
             //// Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
@@ -125,9 +126,22 @@ class PageAverage : AppCompatActivity() {
             }
         }.start()
     }
-    private fun playTimerStop() {
-     timer.cancel()
+
+    private fun playTimerRestart() {
+        if(!isPlaying){
+            playTimer()
+            binding.buttonStartTimer.text="СТОП"
+            isPlaying=true
+        }
+        else{
+            timer.cancel()
+            binding.buttonStartTimer.text="РЕСТАРТ"
+            isPlaying=false
+        }
     }
+//    private fun playTimerStop() {
+//     timer.cancel()
+//    }
 
 //    //Средний уровень функции
 

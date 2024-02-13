@@ -12,13 +12,11 @@ import com.example.crocodile.databinding.ActivityPageHardBinding
 class PageHard : AppCompatActivity() {
     lateinit var binding: ActivityPageHardBinding
     private var isPlaying = false
-    lateinit var timer: CountDownTimer
+    private lateinit var timer: CountDownTimer
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPageHardBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-
 
 
         //Музыкальное сопровождение
@@ -31,13 +29,12 @@ class PageHard : AppCompatActivity() {
 
             //Подключение кнопки таймера
             buttonStartTimer.setOnClickListener {
-                playTimer()
-
+                playTimerRestart()
                 mediaPlayer.start()
             }
-            buttonStopTimer.setOnClickListener {
-                playTimerStop()
-            }
+//            buttonStopTimer.setOnClickListener {
+//                playTimerStop()
+//            }
 
             //// Подключение кнопки для включение и выключения музыки
             buttonMusic.setOnClickListener {
@@ -67,6 +64,7 @@ class PageHard : AppCompatActivity() {
                         val intent = Intent(this@PageHard, MainActivity::class.java)
                         startActivity(intent)
                     }
+
                     R.id.average -> {
                         val intent = Intent(this@PageHard, PageAverage::class.java)
                         startActivity(intent)
@@ -113,7 +111,7 @@ class PageHard : AppCompatActivity() {
 
     // функция таймер
     private fun playTimer() {
-      timer =  object : CountDownTimer(200000, 1000) {
+        timer = object : CountDownTimer(200000, 1000) {
 
 
             override fun onTick(millisUntilFinished: Long) {
@@ -126,9 +124,9 @@ class PageHard : AppCompatActivity() {
         }.start()
     }
 
-    private fun playTimerStop() {
-        timer.cancel()
-    }
+//    private fun playTimerStop() {
+//        timer.cancel()
+//    }
 //    //Средний уровень функции
 
     private fun getItemsHard(): String {
@@ -165,6 +163,18 @@ class PageHard : AppCompatActivity() {
     private fun randomNumberWorkHard(): Int {
         val size = resources.getStringArray(R.array.workHard).size - 1
         return (0..size).random()
+    }
+
+    private fun playTimerRestart() {
+        if (!isPlaying) {
+            playTimer()
+            binding.buttonStartTimer.text = "СТОП"
+            isPlaying = true
+        } else {
+            timer.cancel()
+            binding.buttonStartTimer.text = "РЕСТАРТ"
+            isPlaying = false
+        }
     }
 }
 

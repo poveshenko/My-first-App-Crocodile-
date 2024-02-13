@@ -39,16 +39,16 @@ private lateinit var timer: CountDownTimer
             //Подключение кнопки таймера
             buttonStartTimer.setOnClickListener {
 
-                playTimer()
+                playTimerRestart()
 
                 mediaPlayer.start()
             }
 
-            buttonStopTimer.setOnClickListener {
-                playTimerStop()
-
-                mediaPlayer.start()
-            }
+//            buttonStopTimer.setOnClickListener {
+//                playTimerStop()
+//
+//                mediaPlayer.start()
+//            }
 
 
 // Подключение кнопки для включение и выключения музыки
@@ -181,20 +181,21 @@ private lateinit var timer: CountDownTimer
 
         //функция рестарт/стоп
     }
-//    private fun playTimerRestart() {
-//        if(!isPlaying){
-//            playTimer()
-//            binding.buttonStartTimer.text="СТОП"
-//            isPlaying=true
-//        }else{
-//            timer.cancel()
-//            binding.buttonStartTimer.text="РЕСТАРТ"
-//            isPlaying=false
-//        }
-//    }
-    private fun playTimerStop() {
-        timer.cancel()
+    private fun playTimerRestart() {
+        if(!isPlaying){
+            playTimer()
+            binding.buttonStartTimer.text="СТОП"
+            isPlaying=true
+        }
+        else{
+            timer.cancel()
+            binding.buttonStartTimer.text="РЕСТАРТ"
+            isPlaying=false
+        }
     }
+//    private fun playTimerStop() {
+//        timer.cancel()
+//    }
 
 
 
